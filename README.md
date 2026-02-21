@@ -1,1 +1,77 @@
 # Brain-Tumor-ClassificationDeep
+#Brain Tumor Classification using ResNet18
+
+##Project Overview
+This project applies Transfer Learning using a pretrained ResNet18 model to classify brain MRI images into two categories (Negative / Positive).
+
+---
+
+##Model Architecture
+- Pretrained ResNet18
+- All layers frozen
+- Fine-tuned layer4
+- Fully Connected layer modified for Binary Classification (2 classes)
+
+---
+
+##Training Details
+- Loss Function: CrossEntropyLoss
+- Optimizer: Adam (lr=0.0001)
+- Epochs: 15
+- Batch size: 32
+- Image size: 224x224
+- Data Augmentation:
+  - RandomHorizontalFlip
+  - RandomRotation(10°)
+
+---
+
+##Results
+
+### Best Test Accuracy:
+**93.48%**
+
+### Classification Report:
+
+| Class     | Precision | Recall | F1-Score |
+|-----------|-----------|--------|----------|
+| Negative  | 0.94      | 0.89   | 0.91     |
+| Positive  | 0.93      | 0.96   | 0.95     |
+
+Overall Accuracy: **93%**
+
+Macro Avg F1-score: **0.93**
+
+---
+
+##Evaluation Metrics
+- Accuracy
+- Precision
+- Recall
+- F1-score
+- Confusion Matrix
+
+---
+
+##Technologies Used
+- Python
+- PyTorch
+- Torchvision
+- NumPy
+- Matplotlib
+- Scikit-learn
+- Seaborn
+
+---
+
+##How to Run
+```bash
+pip install -r requirements.txt
+python train.py
+```
+
+---
+
+##Dataset
+Dataset is not included in this repository.
+Place your dataset inside a folder and update the path inside the script.
